@@ -111,17 +111,6 @@ class BlackScholes:
         self.call_price = call_price
         self.put_price = put_price
 
-        # GREEKS
-        # Delta
-        self.call_delta = norm.cdf(d1)
-        self.put_delta = 1 - norm.cdf(d1)
-
-        # Gamma
-        self.call_gamma = norm.pdf(d1) / (
-                strike * volatility * sqrt(time_to_maturity)
-        )
-        self.put_gamma = self.call_gamma
-
         return call_price, put_price
 
 
