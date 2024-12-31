@@ -2,16 +2,13 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from scipy.stats import norm
-import plotly.graph_objects as go
 from numpy import log, sqrt, exp  # Make sure to import these
 import matplotlib.pyplot as plt
 import seaborn as sns
 import streamlit_antd_components as sac
 from streamlit_extras.add_vertical_space import add_vertical_space
-
 from streamlit_extras.stylable_container import stylable_container
-from streamlit_elements import elements, mui, html
-import streamlit_shadcn_ui as ui
+
 
 #######################
 # Page configuration
