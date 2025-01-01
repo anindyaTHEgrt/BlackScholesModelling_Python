@@ -111,31 +111,6 @@ class BlackScholes:
         return call_price, put_price
 
 
-# Function to generate heatmaps
-# ... your existing imports and BlackScholes class definition ...
-
-
-# Sidebar for User Inputs
-
-
-
-with st.sidebar:
-    st.title("Control Panel")
-    linkedin_url = "https://www.linkedin.com/in/mprudhvi/"
-
-
-    current_price = st.number_input("Current Asset Price", value=10.0)
-    strike = st.number_input("Strike Price", value=10.0)
-    time_to_maturity = st.number_input("Time to Maturity (Years)", value=1.0)
-    volatility = st.number_input("Volatility (σ)", value=0.2)
-    interest_rate = st.number_input("Risk-Free Interest Rate", value=0.05)
-
-    sac.divider(label='Me', icon='person', align='center', color='gray')
-
-    st.subheader("Made by Anindya Zarbade")
-
-    st.link_button("LinkdIn", url="https://www.linkedin.com/in/anindyazarbade")
-    st.link_button("GitHub", url="https://github.com/anindyaTHEgrt")
 
 
 def plot_heatmap(bs_model, spot_range, vol_range, strike):
@@ -177,6 +152,17 @@ def plot_heatmap(bs_model, spot_range, vol_range, strike):
 # Main Page for Output Display
 st.title("Black-Scholes Pricing Model")
 
+col1, col2 = st.columns([1, 1], gap="small")
+
+with col1:
+    current_price = st.number_input("Current Asset Price", value=10.0)
+    strike = st.number_input("Strike Price", value=10.0)
+    time_to_maturity = st.number_input("Time to Maturity (Years)", value=1.0)
+
+with col2:
+    volatility = st.number_input("Volatility (σ)", value=0.2)
+    interest_rate = st.number_input("Risk-Free Interest Rate", value=0.05)
+
 # Table of Inputs
 input_data = {
     "Current Asset Price": [current_price],
@@ -186,6 +172,8 @@ input_data = {
     "Risk-Free Interest Rate": [interest_rate],
 }
 input_df = pd.DataFrame(input_data)
+
+
 
 with stylable_container(
         key="green_button",
@@ -268,3 +256,8 @@ with col2:
     _, heatmap_fig_put = plot_heatmap(bs_model, spot_range, vol_range, strike)
     st.pyplot(heatmap_fig_put)
 
+sac.divider(label='Me', icon='person', align='center', color='gray')
+
+st.subheader("Made by Anindya Zarbade")
+st.link_button("LinkdIn", url="https://www.linkedin.com/in/anindyazarbade")
+st.link_button("GitHub", url="https://github.com/anindyaTHEgrt")
