@@ -20,15 +20,6 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded")
 
-components.html("""
-    <meta property="og:title" content="Black-Scholes Option Pricing Model" />
-    <meta property="og:description" content="A Streamlit app for pricing options using the Black-Scholes model." />
-    <meta property="og:url" content="https://blackscholesmodelanindyazarbade.streamlit.app/" />
-    <meta property="og:type" content="website" />
-""")
-
-
-
 # Custom CSS to inject into Streamlit
 st.markdown("""
 <style>
