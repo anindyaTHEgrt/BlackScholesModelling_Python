@@ -14,6 +14,11 @@ import streamlit.components.v1 as components
 
 #######################
 # Page configuration
+st.set_page_config(
+    page_title="Black-Scholes Option Pricing Model",
+    page_icon="",
+    layout="wide",
+    initial_sidebar_state="expanded")
 
 components.html("""
     <meta property="og:title" content="Black-Scholes Option Pricing Model" />
@@ -22,11 +27,7 @@ components.html("""
     <meta property="og:type" content="website" />
 """)
 
-st.set_page_config(
-    page_title="Black-Scholes Option Pricing Model",
-    page_icon="",
-    layout="wide",
-    initial_sidebar_state="expanded")
+
 
 # Custom CSS to inject into Streamlit
 st.markdown("""
