@@ -8,11 +8,19 @@ import seaborn as sns
 import streamlit_antd_components as sac
 from streamlit_extras.add_vertical_space import add_vertical_space
 from streamlit_extras.stylable_container import stylable_container
+##
+import streamlit.components.v1 as components
 
 
 #######################
 # Page configuration
 
+components.html("""
+    <meta property="og:title" content="Black-Scholes Option Pricing Model" />
+    <meta property="og:description" content="A Streamlit app for pricing options using the Black-Scholes model." />
+    <meta property="og:url" content="https://blackscholesmodelanindyazarbade.streamlit.app/" />
+    <meta property="og:type" content="website" />
+""")
 
 st.set_page_config(
     page_title="Black-Scholes Option Pricing Model",
